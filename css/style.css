@@ -1,0 +1,392 @@
+/*------------------------------------------------------- common css */
+/* Comic Neue fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,700;1,400&display=swap');
+
+/* regular fonts font link css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+/*-------------------------------------------------------------------- common css */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #ffe606d4;
+	color: #02a744;
+	font-style: italic;
+	overflow-x: hidden;
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1250px;
+	margin: auto;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #02a744;
+}
+a:hover {
+	color: #02a744;
+}
+
+
+/*---------------------------------------------------menubar css*/
+.header {
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99;
+}
+
+.header-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 4px;
+}
+
+.header .logo {
+	padding: 0 15px;
+}
+
+.header .nav-menu {
+	padding: 0 15px;
+}
+
+.header .menu>.menu-item {
+	display: inline-block;
+	margin-left: 30px;
+	position: relative;
+}
+
+/*------------------------ if you want change the menubar typography. just change here color property */
+
+.header .menu>.menu-item>a {
+	display: block;
+	padding: 12px 0;
+	font-size:18px;
+	color: #02a744;
+	font-family: 'Comic Neue', cursive;
+	text-transform: capitalize;
+	font-weight: 700;
+	transition: all 0.2s ease;
+}
+
+/*---------------------- if you want to change menuar list hover color, just change color property */
+
+.header .menu>.menu-item>.sub-menu>.menu-item>a:hover,
+.header .menu>.menu-item:hover>a {
+	color: #e91e63;
+}
+
+
+.header .open-nav-menu {
+	height: 34px;
+	width: 40px;
+	margin-right: 15px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+
+/*--------------------- Responsive hamburger typography starts here */
+
+.header .open-nav-menu span {
+	display: block;
+	height: 3px;
+	width: 24px;
+	background-color: #000000;
+	position: relative;
+}
+
+.header .open-nav-menu span:before,
+.header .open-nav-menu span:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	box-sizing: border-box;
+}
+
+.header .open-nav-menu span:before {
+	top: -7px;
+}
+
+.header .open-nav-menu span:after {
+	top: 7px;
+}
+
+.header .close-nav-menu {
+	height: 40px;
+	width: 40px;
+	background-color: #ffffff;
+	margin: 0 0 15px 15px;
+	cursor: pointer;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.header .close-nav-menu img {
+	width: 16px;
+}
+
+.header .menu-overlay {
+	position: fixed;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.5);
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+/* srcoll up button */
+
+
+#btn-back-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+  }
+  .btn {
+    background-color: #149ddd;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/*--------------------- Responsive hamburger typography end here */
+
+/* responsive for mobile devices*/
+
+@media(max-width: 991px) {
+	.header .menu-overlay.active {
+		visibility: visible;
+		opacity: 1;
+	}
+  /*------------------ you can change background color for mobile devices */
+	.header .nav-menu {
+		position: fixed;
+		right: -280px;
+		visibility: hidden;
+		width: 280px;
+		height: 100%;
+		top: 0;
+		overflow-y: auto;
+		background-color: #ffe606;;
+		z-index: 1000;
+		padding: 15px 0;
+		transition: all 0.5s ease;
+	}
+
+	.header .nav-menu.open {
+		visibility: visible;
+		right: 0px;
+	}
+
+	.header .menu>.menu-item {
+		display: block;
+		margin: 0;
+	}
+
+	.header .menu>.menu-item-has-children>a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	/*---------------------- you can change menubar list color and border for mobile devices */
+	.header .menu>.menu-item>a {
+		color:  #02a744;
+		padding: 12px 15px;
+		border-bottom: 1px solid #02a744;
+	}
+
+	.header .menu>.menu-item:first-child>a {
+		border-top: 1px solid  #02a744;
+	}
+
+	.header .close-nav-menu,
+	.header .open-nav-menu {
+		display: flex;
+	}
+
+
+
+}
+
+/* ----------------------------------------------------------- first section css */
+
+/* background imgage */
+
+.first_sect {
+	background-image: url(../img/Background_pages_Home_man.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 80vh;
+}
+.shape_img img {
+	margin-top: -165px;
+}
+/* hero area css */
+.hero_area {
+	padding-left: 150px;
+	padding-top:80px;
+}
+
+.containerrows{
+	display: flex;
+
+}
+
+
+.hero_title {
+	padding-top:30px;
+	font-weight: bold;
+}
+
+.hero_title h1,
+h3 {
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.hero_title h3 {
+	width: 95%;
+}
+.common_titles h3{
+	width: 50%;
+
+  }
+.togethar{
+	display: flex;
+	align-items: center;
+  }
+
+  /*--------------- you can change social typography here */
+  .social_icons i {
+    margin-left: 10px;
+    color: #fff;
+	background: #02a744;
+    padding: 10px;
+    border-radius: 50%;
+	transition: 0.3s;
+}
+  .social_icons i:hover {
+    margin-left: 10px;
+    color: #e91e63;
+    background: #03cc53;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/*------------------- button css */
+.btn_buy a {
+	padding: 10px 25px;
+	background: #02a744;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 25px;
+	transition: 0.3s;
+}
+.btn_buy a:hover {
+	padding: 10px 25px;
+	background: #03cc53;
+	color: #e91e63;
+	font-size: 18px;
+	border-radius: 25px;
+}
+
+
+
+
+
+/*------------------------------------------------------------- third_section css */
+.service_content{
+	padding:15px 20px;
+	margin: 10px 10px 10px 0px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+ /*------------------------------------------------------------- some custom css for mobile devices */
+
+
+@media only screen and (max-width: 667px) {
+	.hero_area {
+		padding-left: 20px;
+		padding-top:30px;
+		
+	}
+	.shape_img img {
+		margin-top: -80px;
+	}
+	.hero_title h3 {
+		font-weight: 700;
+		letter-spacing: 1px;
+		font-size: 18px;
+	}
+	.common_titles h3{
+		width:80%;
+	  }
+	.shape_above_content {
+		margin-top: 40px;
+	}
+	.containerrows{
+		flex-direction: column;
+		flex-direction: column-reverse;
+	
+	}
+	section{
+		padding-right:10px;
+		padding-left:10px;
+	}
+	.images_hyperlink img{
+		width:25%;
+	}
+	.btn_buy a {
+		padding:10px 30px;
+	}
+	.togethar{
+		display: flex;
+		align-items: self-start;
+		flex-direction: column;
+	  }
+	  .social_icons{
+		margin-top:20px;
+	  }
+	.btn_buy a:hover {
+		padding:10px 30px;
+	}
+	/*----------------------------- background img for mobile device */
+	.first_sect {
+		background-image: url(../img/Background_pages_Home_man_for_mobile.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height:60vh;
+	}
+}
